@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Assignment-3</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .center-text {
+            text-align: center;
+        }
+
+        header {
+            margin: auto;
+            padding: 25px;
+            background: aliceblue;
+            text-align: center;
+        }
+
+        .parent-box {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 200px;
+        }
+
+        .parent-box div {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border: 2px solid rgba(58, 42, 42, 0.432);
+        }
+
+        .input-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .input-box input {
+            margin: 0px 10px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>Hello User </h2>
+    </header>
+    <div class="parent-box">
+        <div class="center-text ">Red</div>
+        <div class="center-text ">Green</div>
+        <div class="center-text ">Blue</div>
+        <div class="center-text ">Yellow</div>
+    </div>
+    <div class="input-box">
+        <input type="text" name="name" id="name">
+        <input type="submit" name="smt" id="smt">
+    </div>
+    <script>
+        let input = document.getElementById("name");
+        let submit = document.getElementById("smt");
+        let header = document.querySelector("header h2");
+        submit.addEventListener("click", function () {
+            header.innerText = "Hello " + input.value;
+        });
+let array = document.querySelectorAll(".parent-box div");
+array.forEach(function (element) {
+    element.addEventListener("click", function () {
+        element.style.backgroundColor = element.innerText;
+    });
+});
+
+
+    </script>
+</body>
+
+</html>

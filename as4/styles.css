@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', serif;
+    padding: 50px;
+}
+
+.wrapper {
+    width: 456px;
+    border: 2px solid rebeccapurple;
+    border-radius: 14px;
+    padding: 26px;
+    margin: auto;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+input {
+    width: 200px;
+    padding: 8px;
+}
+
+.password-wrapper {
+    position: relative;
+    width: 200px;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.error-msg {
+    color: red;
+    font-size: 12px;
+    display: none;
+    text-align: center;
+    margin-bottom: 10px;
+    display: block;
+}
+
+#submit {
+    width: 100px;
+    margin: 20px auto;
+    display: block;
+}

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sippline - Glass ka Mask</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f8a87c 0%, #f07e55 100%);
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 8%;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .nav-btn,
+        .cta-btn {
+            background: #2d3436;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            z-index: 1;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+            height: calc(100vh - 100px);
+            position: relative;
+        }
+
+        .hero-text {
+            flex: 1;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            max-width: 500px;
+        }
+
+        .hero-text p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            max-width: 450px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Clip Path Shapes */
+        .image-container {
+            flex: 1;
+            position: relative;
+            height: 100%;
+            /* overflow: overlay; */
+        }
+
+        /* Large white diamond background */
+        .shape-bg {
+            position: absolute;
+            top: 0%;
+            right: -232px;
+            transform: rotate(42deg);
+            width: 581px;
+            height: 561px;
+            background: #c35b2e;
+            /* Create a diamond shape */
+            border: 58px solid #ffffff;
+            /* clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); */
+        }
+
+        /* Smaller diamond containing the image */
+        .shape-img {
+            position: absolute;
+            top: 11%;
+            right: -60px;
+            width: 463px;
+            height: 440px;
+            transform: rotate(-3deg);
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            z-index: 1;
+        }
+
+        .shape-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 968px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 50px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+                margin: 0 auto 20px;
+            }
+
+            .image-container {
+                display: none;
+                /* Hide complex shapes on mobile for simplicity */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">Sippline</div>
+            <ul class="nav-links">
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Blogs</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <button class="nav-btn">Buy Now</button>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <div class="hero-text">
+            <h1>Sippline drinking shields – The “Glass ka Mask”</h1>
+            <p>Sippline Drinking Shield aims to protect the user from not just such fatal diseases but, also the mild
+                ones such as common flu. Sippline drinking shield does the same job a face mask does, albeit
+                differently.</p>
+            <button class="cta-btn">Buy the Glass Mask!</button>
+        </div>
+
+        <div class="image-container">
+            <div class="shape-bg"></div>
+            <div class="shape-img">
+                <img src="image.png" alt="">
+            </div>
+        </div>
+    </main>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+
+</html>

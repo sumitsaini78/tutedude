@@ -1,0 +1,10 @@
+<?php
+$emailto="sumitlobhyaan7310@gmail.com";
+$subject="signed up";
+$body="hello sumit you have succesfully signed up !";
+$headers="from sitelify.in";
+if(mail($emailto,$subject,$body,$headers)){
+    console.log("succefull");
+}
+
+?>
